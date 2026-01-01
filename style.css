@@ -1,0 +1,223 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e8f5f0;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 32, 39, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+}
+
+.navbar a {
+  color: #7fffd4;
+  text-decoration: none;
+  margin: 0 12px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: rgba(127, 255, 212, 0.2);
+  color: #fff;
+}
+
+/* HERO */
+/* HERO – FULL WIDTH 50 / 50 */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg,#29427A);
+}
+
+/* LIJEVA STRANA – TEKST */
+.hero-text {
+  width: 50%;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.small-title {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin: 15px 0;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  width: fit-content;
+  padding: 14px 32px;
+  background: white;
+  color: #ff6a55;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* DESNA STRANA – SLIKA */
+.hero-img {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-img {
+    width: 100%;
+  }
+
+  .hero-img img {
+    height: auto;
+  }
+}
+
+
+.small-title {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin: 12px 0;
+}
+
+.hero h1 span {
+  font-weight: 700;
+}
+
+.hero p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #fff;
+  color: #ff6a55;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* FULL WIDTH SECTIONS */
+.section {
+  width: 100%;
+  padding: 80px 10%;
+  background: linear-gradient(145deg, rgba(34,139,110,0.9), rgba(15,80,65,0.95));
+}
+
+.section:nth-of-type(even) {
+  background: linear-gradient(145deg, rgba(20,110,90,0.9), rgba(10,60,55,0.95));
+}
+
+.section h2 {
+  color: #7fffd4;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.section p {
+  max-width: 900px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 18px;
+  max-width: 900px;
+}
+
+.skill {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(127,255,212,0.4);
+  background: rgba(0,0,0,0.25);
+}
+
+/* LISTS */
+.section ul {
+  list-style: none;
+  max-width: 900px;
+}
+
+.section li {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.25);
+  border-left: 4px solid #7fffd4;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: rgba(15, 32, 39, 0.95);
+  color: #bfffe8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 8%;
+  }
+
+  .hero-img img {
+    margin-top: 30px;
+  }
+}

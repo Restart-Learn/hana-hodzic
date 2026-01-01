@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="400" height="450">
+  <defs>
+    <!-- Dark green gradient for main shape -->
+    <linearGradient id="darkGreenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d3b2e">
+        <animate attributeName="stop-color" values="#0d3b2e;#1a4d3e;#0f4035;#0d3b2e" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#145c4a">
+        <animate attributeName="stop-color" values="#145c4a;#0d3b2e;#1a5c4a;#145c4a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#0a2e23">
+        <animate attributeName="stop-color" values="#0a2e23;#0f4035;#0d3b2e;#0a2e23" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Inner glow gradient -->
+    <radialGradient id="innerGlowGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a5c4a;stop-opacity:0.3"/>
+      <stop offset="70%" style="stop-color:#0d3b2e;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#2d8a6e;stop-opacity:0.2"/>
+    </radialGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradientGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e6cf"/>
+      <stop offset="30%" style="stop-color:#7dcea0"/>
+      <stop offset="60%" style="stop-color:#52b788"/>
+      <stop offset="100%" style="stop-color:#2d8a6e"/>
+    </linearGradient>
+
+    <!-- Butterfly wing gradient -->
+    <linearGradient id="butterflyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d8a6e"/>
+      <stop offset="30%" style="stop-color:#1a5c4a"/>
+      <stop offset="70%" style="stop-color:#0d3b2e"/>
+      <stop offset="100%" style="stop-color:#0a2e23"/>
+    </linearGradient>
+
+    <!-- Subtitle gradient -->
+    <linearGradient id="subtitleGradientGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#52b788">
+        <animate attributeName="stop-color" values="#52b788;#7dcea0;#a8e6cf;#52b788" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#7dcea0">
+        <animate attributeName="stop-color" values="#7dcea0;#a8e6cf;#52b788;#7dcea0" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#a8e6cf">
+        <animate attributeName="stop-color" values="#a8e6cf;#52b788;#7dcea0;#a8e6cf" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Text glow filter -->
+    <filter id="textGlowGreen" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#2d8a6e" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for particles -->
+    <filter id="particleGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Butterfly shadow -->
+    <filter id="butterflyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0a2e23" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Clip path for circle -->
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="140"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main floating group -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="5s" repeatCount="indefinite"/>
+    
+    <!-- Main circle -->
+    <circle cx="200" cy="200" r="140" fill="url(#darkGreenGradient)" filter="url(#glowGreen)"/>
+    
+    <!-- Inner circle glow -->
+    <circle cx="200" cy="200" r="125" fill="url(#innerGlowGreen)"/>
+
+    <!-- Decorative ring -->
+    <circle cx="200" cy="200" r="130" fill="none" stroke="#2d8a6e" stroke-width="1" opacity="0.4">
+      <animate attributeName="stroke-opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Decorative vine curves around circle -->
+    <g stroke="#2d8a6e" stroke-width="1" fill="none" opacity="0.5">
+      <!-- Left vine -->
+      <path d="M80,150 Q60,200 80,250">
+        <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="65" cy="175" r="3" fill="#52b788">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="200" r="2" fill="#7dcea0">
+        <animate attributeName="r" values="1.5;3;1.5" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="65" cy="225" r="2.5" fill="#52b788">
+        <animate attributeName="r" values="2;3.5;2" dur="2.2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+      
+      <!-- Right vine -->
+      <path d="M320,150 Q340,200 320,250">
+        <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      </path>
+      <circle cx="335" cy="175" r="3" fill="#52b788">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      <circle cx="340" cy="200" r="2" fill="#7dcea0">
+        <animate attributeName="r" values="1.5;3;1.5" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
+      </circle>
+      <circle cx="335" cy="225" r="2.5" fill="#52b788">
+        <animate attributeName="r" values="2;3.5;2" dur="2.2s" repeatCount="indefinite" begin="1.3s"/>
+      </circle>
+    </g>
+
+    <!-- Static main butterfly above HH -->
+    <g transform="translate(200, 120)" filter="url(#butterflyShadow)">
+      <!-- Left wing -->
+      <path d="M0,0 C-25,-20 -40,-15 -35,5 C-42,0 -50,10 -40,20 C-45,25 -35,35 -20,25 C-25,30 -15,35 -5,20 Z" fill="url(#butterflyGradient)" stroke="#a8e6cf" stroke-width="0.5"/>
+      <!-- Left wing pattern -->
+      <ellipse cx="-25" cy="5" rx="8" ry="6" fill="#1a5c4a" opacity="0.7"/>
+      <ellipse cx="-25" cy="5" rx="4" ry="3" fill="#a8e6cf" opacity="0.5"/>
+      <circle cx="-35" cy="18" r="4" fill="#1a5c4a" opacity="0.6"/>
+      <circle cx="-35" cy="18" r="2" fill="#52b788" opacity="0.5"/>
+      
+      <!-- Right wing -->
+      <path d="M0,0 C25,-20 40,-15 35,5 C42,0 50,10 40,20 C45,25 35,35 20,25 C25,30 15,35 5,20 Z" fill="url(#butterflyGradient)" stroke="#a8e6cf" stroke-width="0.5"/>
+      <!-- Right wing pattern -->
+      <ellipse cx="25" cy="5" rx="8" ry="6" fill="#1a5c4a" opacity="0.7"/>
+      <ellipse cx="25" cy="5" rx="4" ry="3" fill="#a8e6cf" opacity="0.5"/>
+      <circle cx="35" cy="18" r="4" fill="#1a5c4a" opacity="0.6"/>
+      <circle cx="35" cy="18" r="2" fill="#52b788" opacity="0.5"/>
+      
+      <!-- Body -->
+      <ellipse cx="0" cy="12" rx="3" ry="15" fill="#0a2e23"/>
+      <ellipse cx="0" cy="12" rx="2" ry="12" fill="#1a5c4a"/>
+      
+      <!-- Head -->
+      <circle cx="0" cy="-5" r="4" fill="#0a2e23"/>
+      <circle cx="0" cy="-5" r="2.5" fill="#1a5c4a"/>
+      
+      <!-- Antennae -->
+      <path d="M-2,-8 Q-8,-20 -12,-22" stroke="#2d8a6e" stroke-width="1" fill="none"/>
+      <circle cx="-12" cy="-22" r="1.5" fill="#a8e6cf"/>
+      <path d="M2,-8 Q8,-20 12,-22" stroke="#2d8a6e" stroke-width="1" fill="none"/>
+      <circle cx="12" cy="-22" r="1.5" fill="#a8e6cf"/>
+    </g>
+
+    <!-- Floating small butterflies (animated) -->
+    <!-- Butterfly 1 - left -->
+    <g transform="translate(85, 190)">
+      <animateTransform attributeName="transform" type="translate" values="85,190;80,185;90,195;85,190" dur="6s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1,1;1,0.7;1,1" dur="0.3s" repeatCount="indefinite"/>
+        <path d="M0,0 C-8,-6 -12,-4 -10,2 C-12,4 -8,8 -3,5 Z" fill="#52b788" opacity="0.7"/>
+        <path d="M0,0 C8,-6 12,-4 10,2 C12,4 8,8 3,5 Z" fill="#52b788" opacity="0.7"/>
+        <ellipse cx="0" cy="3" rx="1" ry="4" fill="#0a2e23"/>
+      </g>
+    </g>
+
+    <!-- Butterfly 2 - right -->
+    <g transform="translate(315, 200)">
+      <animateTransform attributeName="transform" type="translate" values="315,200;320,195;310,205;315,200" dur="5s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1,1;1,0.6;1,1" dur="0.25s" repeatCount="indefinite"/>
+        <path d="M0,0 C-6,-5 -10,-3 -8,2 C-10,3 -6,6 -2,4 Z" fill="#7dcea0" opacity="0.6"/>
+        <path d="M0,0 C6,-5 10,-3 8,2 C10,3 6,6 2,4 Z" fill="#7dcea0" opacity="0.6"/>
+        <ellipse cx="0" cy="2" rx="0.8" ry="3" fill="#0a2e23"/>
+      </g>
+    </g>
+
+    <!-- Butterfly 3 - bottom left -->
+    <g transform="translate(120, 310)">
+      <animateTransform attributeName="transform" type="translate" values="120,310;115,305;125,312;120,310" dur="7s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1,1;1,0.65;1,1" dur="0.28s" repeatCount="indefinite"/>
+        <path d="M0,0 C-7,-5 -11,-3 -9,2 C-11,3 -7,7 -2,4 Z" fill="#a8e6cf" opacity="0.5"/>
+        <path d="M0,0 C7,-5 11,-3 9,2 C11,3 7,7 2,4 Z" fill="#a8e6cf" opacity="0.5"/>
+        <ellipse cx="0" cy="2.5" rx="0.8" ry="3.5" fill="#0a2e23"/>
+      </g>
+    </g>
+
+    <!-- Butterfly 4 - top right -->
+    <g transform="translate(290, 100)">
+      <animateTransform attributeName="transform" type="translate" values="290,100;295,95;285,105;290,100" dur="5.5s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1,1;1,0.7;1,1" dur="0.32s" repeatCount="indefinite"/>
+        <path d="M0,0 C-5,-4 -8,-2 -7,1.5 C-8,2.5 -5,5 -1.5,3 Z" fill="#52b788" opacity="0.6"/>
+        <path d="M0,0 C5,-4 8,-2 7,1.5 C8,2.5 5,5 1.5,3 Z" fill="#52b788" opacity="0.6"/>
+        <ellipse cx="0" cy="2" rx="0.6" ry="2.5" fill="#0a2e23"/>
+      </g>
+    </g>
+
+    <!-- Butterfly 5 - bottom right -->
+    <g transform="translate(280, 300)">
+      <animateTransform attributeName="transform" type="translate" values="280,300;285,295;275,305;280,300" dur="6.5s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1,1;1,0.6;1,1" dur="0.27s" repeatCount="indefinite"/>
+        <path d="M0,0 C-6,-5 -9,-3 -8,2 C-9,3 -6,6 -2,4 Z" fill="#7dcea0" opacity="0.55"/>
+        <path d="M0,0 C6,-5 9,-3 8,2 C9,3 6,6 2,4 Z" fill="#7dcea0" opacity="0.55"/>
+        <ellipse cx="0" cy="2" rx="0.7" ry="3" fill="#0a2e23"/>
+      </g>
+    </g>
+
+    <!-- Floating leaf particles inside circle -->
+    <g clip-path="url(#circleClip)" filter="url(#particleGlow)">
+      <!-- Leaf 1 -->
+      <path d="M150,160 Q153,155 157,158 Q153,162 150,160" fill="#52b788">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;5,-10;0,0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <!-- Leaf 2 -->
+      <path d="M250,175 Q253,170 257,173 Q253,177 250,175" fill="#7dcea0">
+        <animate attributeName="opacity" values="0;0.7;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;-5,-8;0,0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      </path>
+      <!-- Leaf 3 -->
+      <path d="M170,280 Q173,275 177,278 Q173,282 170,280" fill="#a8e6cf">
+        <animate attributeName="opacity" values="0;0.6;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;3,-12;0,0" dur="4s" repeatCount="indefinite" begin="1s"/>
+      </path>
+      <!-- Leaf 4 -->
+      <path d="M230,270 Q233,265 237,268 Q233,272 230,270" fill="#52b788">
+        <animate attributeName="opacity" values="0;0.7;0" dur="3.2s" repeatCount="indefinite" begin="1.5s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;-4,-10;0,0" dur="3.2s" repeatCount="indefinite" begin="1.5s"/>
+      </path>
+      <!-- Leaf 5 -->
+      <path d="M135,220 Q138,215 142,218 Q138,222 135,220" fill="#7dcea0">
+        <animate attributeName="opacity" values="0;0.65;0" dur="3.8s" repeatCount="indefinite" begin="0.8s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;4,-8;0,0" dur="3.8s" repeatCount="indefinite" begin="0.8s"/>
+      </path>
+      <!-- Leaf 6 -->
+      <path d="M265,230 Q268,225 272,228 Q268,232 265,230" fill="#a8e6cf">
+        <animate attributeName="opacity" values="0;0.7;0" dur="3.3s" repeatCount="indefinite" begin="1.2s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;-3,-9;0,0" dur="3.3s" repeatCount="indefinite" begin="1.2s"/>
+      </path>
+    </g>
+
+    <!-- Sparkle dots inside circle -->
+    <g clip-path="url(#circleClip)">
+      <circle cx="130" cy="190" r="2" fill="#a8e6cf" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="270" cy="185" r="2" fill="#7dcea0" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.3s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      <circle cx="175" cy="290" r="1.5" fill="#52b788" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.6s"/>
+      </circle>
+      <circle cx="225" cy="285" r="1.5" fill="#a8e6cf" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="0.9s"/>
+      </circle>
+      <circle cx="150" cy="250" r="2" fill="#7dcea0" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="1.2s"/>
+      </circle>
+      <circle cx="250" cy="245" r="2" fill="#52b788" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.1s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+      <circle cx="200" cy="300" r="1.5" fill="#a8e6cf" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+      </circle>
+      <circle cx="145" cy="165" r="1.5" fill="#52b788" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.9s" repeatCount="indefinite" begin="0.7s"/>
+      </circle>
+      <circle cx="255" cy="160" r="2" fill="#7dcea0" filter="url(#particleGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+
+    <!-- Initials HH -->
+    <text x="200" y="215" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" fill="url(#textGradientGreen)" filter="url(#textGlowGreen)" letter-spacing="8">
+      HH
+      <animate attributeName="letter-spacing" values="8;10;8" dur="4s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- Web Designer text -->
+    <text x="200" y="255" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="300" fill="url(#subtitleGradientGreen)" letter-spacing="5" filter="url(#textGlowGreen)">
+      WEB DESIGNER
+    </text>
+
+    <!-- Decorative dots around circle edge -->
+    <circle cx="200" cy="60" r="3" fill="#a8e6cf" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="100" r="3" fill="#7dcea0" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.25s"/>
+    </circle>
+    <circle cx="340" cy="200" r="3" fill="#52b788" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="300" cy="300" r="3" fill="#a8e6cf" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.75s"/>
+    </circle>
+    <circle cx="200" cy="340" r="3" fill="#7dcea0" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="100" cy="300" r="3" fill="#52b788" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1.25s"/>
+    </circle>
+    <circle cx="60" cy="200" r="3" fill="#a8e6cf" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="100" cy="100" r="3" fill="#7dcea0" filter="url(#particleGlow)">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1.75s"/>
+    </circle>
+  </g>
+</svg>
